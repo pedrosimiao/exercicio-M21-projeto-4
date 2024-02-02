@@ -1,0 +1,85 @@
+.faq { 
+    padding: 5.6vw;
+
+    @media (max-width: 768px) {
+        padding: 40px 20px;
+    }
+
+    h2 { 
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    &__questions {
+        &__item {
+            background-color: #13151d;
+            margin-top: 16px;
+
+            &__question {
+                color: #fff;
+                font-size: 20px;
+                padding: 24px;
+                display: block;
+                cursor: pointer;
+                position: relative;
+                text-align: left;
+
+                @media (max-width: 768px) {
+                    font-size: 15px;
+                }
+
+                span {
+                    align-items: stretch;
+                    display: flex;
+                    font-weight: 400;
+                    letter-spacing: 1;
+                    padding-right: 26px;
+
+                    @media (max-width: 768px) {
+                        width: 312px;
+                    }
+                }
+
+                &::after {
+                    content: '+';
+                    position: absolute;
+                    top: 0;
+                    right: 24px; 
+                    height: 100%; 
+                    display: flex;
+                    align-items: center; 
+                    font-size: 40px;
+                }
+            }
+
+            &__answer { 
+                height: 0px; 
+                overflow: hidden; 
+                padding: 0 24px;
+                transition: height, 400ms ease;
+            }
+
+            &--is-open {
+                .faq__questions__item__question::after {
+                    content: '-';
+                    font-size: 50px;
+                }
+
+                .faq__questions__item__answer { 
+                    height: auto;
+                    padding-bottom: 24px;
+                    transition: height, .2s linear;
+
+                    ul {
+                        padding: 0 40px;
+                        list-style: disc;
+                    }
+
+                    li {
+                        margin-top: 16px;
+                    }
+                }    
+            }
+        }
+    }
+}

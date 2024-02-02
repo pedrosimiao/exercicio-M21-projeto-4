@@ -1,0 +1,305 @@
+@use 'variables';
+
+.plans {
+    padding: 5.6vw;
+
+    @media (max-width: 768px) {
+        padding: 40px 0;
+    }
+
+    &__text {
+        text-align: center;
+
+        &:first-child {
+            margin-top: -4px;
+
+            @media (max-width: 768px) {
+                margin-top: -1.5px;
+            }
+        }
+
+        h2 {
+            font-weight: 700;
+            letter-spacing: normal;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+    }
+
+    &__chart {
+        max-width: 992px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        &__grid-head {
+
+            .spacer {
+                margin-top: 8px;
+            }
+
+            &--fixed {
+                position: sticky;
+                top: 0;
+                z-index: 1;
+            }
+            
+            &__item {                
+
+                align-items: stretch;
+                display: flex;
+                flex-direction: row;
+                padding-top: 24px;
+                background-color: variables.$bgColor;
+                border-bottom: 1px solid variables.$primaryTextColor; 
+                text-align: center;
+                
+                &__type-1 {
+                    width: 42%;
+                    display: flex;
+
+                    @media (max-width: 768px) {
+                        width: 0;
+                    }
+                }
+
+                &__type-2 {
+                    width: 29%;
+                    align-items: center;
+                    display: inline-flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 30px 12px;
+                    position: relative;
+                    border-top: 2px solid hsla(0, 0%, 100%, .1);
+
+                    @media (max-width: 768px) {
+                        width: 50%;
+                        padding: 30px 8px;
+                    }
+
+                    &--highlight {
+                        background-color: #1d1f2b;                        
+                        
+                        picture {
+                            width: 100%;
+                            max-width: 130px;
+                            padding-top: 16px;                            
+                            
+                            img {
+                                max-width: 130px;
+
+                                @media (max-width: 768px) {
+                                    max-width: 80px;
+                                }
+                            }
+                        }
+                        
+                    }
+
+                    picture {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        max-width: 100px;
+                        padding-top: 20px;
+
+                        @media (max-width: 768px) {
+                            max-width: 60px;
+                            padding-top: 0;
+                            margin-top: 20px;
+                        }
+                    }
+
+                    .badge {
+                        background-color: #f9f9f9;
+                        border-radius: 20px;
+                        color: #040714;
+                        display: inline-flex;
+                        font-weight: 700;
+                        padding: 5px 12px;
+                        position: absolute;
+                        text-align: center;
+                        top: -15px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: variables.$secondaryTextColor;
+                    }
+
+                    span {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: variables.$secondaryTextColor;
+                        padding-top: 4.61px;
+                        padding-bottom: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+
+                        @media (max-width: 768px) {
+                            font-size: 14px;
+                            padding-top: 0;
+                            padding-bottom: 3.82px;
+                        }
+                    }
+
+                    .button {
+                        width: 260px;
+                        height: 50px;        
+                        margin: 20px 0 0;
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                        font-size: 14px;
+                        text-align: center;
+                        
+                        span {
+                            font-size: 14px;
+                            margin-top: 3px;
+                        }
+
+                        @media (max-width: 768px) {
+                            max-width: 150px;
+                            padding: 9px 12px;
+
+                            button>span {
+                                margin-top: 1px;
+                                padding-bottom: 0;
+                            }
+                        }
+                    }
+                }    
+            }
+        }
+        
+        &__grid-body {
+            padding-bottom: 15px;
+            flex-grow: 1;
+            overflow-y: auto;
+
+            .spacer {
+                margin-top: 8px;
+
+                @media (screen) {
+                    margin-top: 4px;
+                }
+            }
+            
+            &__item {
+                align-items: stretch;
+                display: flex;
+                flex-direction: row;
+                background-color: variables.$bgColor; 
+                text-align: center;
+                border-bottom: .3px solid hsla(0,0%,75%,.3);
+
+                @media (max-width: 768px) {
+                    flex-wrap: wrap;
+                }
+
+                &__type-1 {
+                    width: 42%;
+                    display: flex;
+                    align-items: center;
+                    text-align: left;
+
+                    @media (max-width: 768px) {
+                        display: block;
+                        height: fit-content;
+                        padding-left: 4px;
+                        padding-right: 4px;
+                        padding-top: 20px;
+                        text-align: center;
+                        width: 100%;
+                    }
+                }
+
+                &__type-2 {
+                    width: 29%;
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                    justify-content: center;
+                    padding: 33px 8px;
+                    position: relative;
+
+                    @media (max-width: 768px) {
+                        width: 50%;
+                        padding: 20px 8px;
+                        text-align: center;
+                    }
+
+                    &--highlight {
+                        background-color: #1d1f2b;
+
+                        @media (max-width: 768px) {
+                            background-color: variables.$bgColor;
+                        }
+                    }
+
+                    .button {
+                        width: 260px;
+                        height: 50px;        
+                        margin: 20px 0 0;                    
+                        font-size: 14px;
+                        text-align: center;
+                        
+                        span {
+                            margin-top: 3px;
+                        }
+
+                        @media (max-width: 768px) {
+                            max-width: 150px;
+                            padding: 9px 12px;
+
+                            span {
+                                margin-top: 1px;
+                            }
+                        }
+                    }
+
+                    p:not(.special-grid-body-item) {    
+                        margin: 20px 0 0;
+                        font-size: 16px;
+                        width: 100%;
+                    }
+
+                    p {
+                        margin: 20px 0 0;
+                        font-size: 18px;
+                        width: 100%;
+
+                        @media (max-width: 768px) {
+                            font-size: 15px;
+                        }
+                    }
+                
+                    picture {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        max-width: 992px;
+        margin-top: 44px;
+        margin-left: auto;
+        margin-right: auto;
+        position: sticky;
+        z-index: 2;
+
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+    }
+}

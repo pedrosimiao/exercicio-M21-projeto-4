@@ -1,0 +1,105 @@
+@use 'variables';
+
+.footer {
+    padding: 26px 0px;
+
+    @media (max-width: 768px) {
+        padding: 20px;
+    }
+
+    &__container {
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+
+        picture {
+            display: block;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 43.53px;
+            width: 80px;
+        }
+    }
+
+    &__logo {
+        width: 80px;
+    }
+
+    &__links {
+        margin: 15px auto 0;
+        padding: 0px 8px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+
+        &__item {
+            
+            a {
+                text-decoration: none;
+                padding: 8px 12px;
+                display: block;
+
+                &:hover {
+                    color: variables.$secondaryTextColor;
+                }
+            }
+        }
+    }
+
+    p {
+        margin-top: 20px;
+    }
+}
+
+.language-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 8px;
+    opacity: .6;
+    position: relative;
+
+    .globe {
+        left: 2px;
+    }
+
+    .down {
+        right: 0;
+    }
+
+    .globe,
+    .down {
+        position: absolute;
+        z-index: 0;
+    }
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: transparent;
+        font-size: 12px;
+        margin: 8px 0;
+        padding: 0px 26px;
+        color: variables.$primaryTextColor;
+        height: 16px;
+        border: none;
+        text-align: center;
+        text-align-last: center;
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+            color: variables.$secondaryTextColor;
+        }
+
+        option {
+            color: variables.$bgColor;
+        }
+    }
+    
+}
